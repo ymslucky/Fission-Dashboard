@@ -45,3 +45,5 @@ git push (main)
 | `PROMETHEUS_URL` | 指标源，默认 `http://coroot-prometheus.coroot.svc:9090` |
 | `ADMIN_GROUPS` | 允许写操作的 Authentik 组名 |
 | `PORT` / `STATIC_DIR` | 监听端口 / 前端静态文件目录（镜像内已设好）|
+
+<!-- ci smoke test 2026-10-29T16:43:31Z -->
