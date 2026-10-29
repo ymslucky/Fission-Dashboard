@@ -1,0 +1,19 @@
+{
+  "functions": {
+    "hello": {
+      "ns": "default",
+      "pods": 1,
+      "ready": 1,
+      "cpu_m": 120,
+      "mem_mi": 256
+    },
+    "world": {
+      "ns": "default",
+      "pods": 2,
+      "ready": 2,
+      "cpu_m": 0,
+      "mem_mi": 512
+    }
+  },
+  "ts": 0
+}

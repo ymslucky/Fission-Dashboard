@@ -1,0 +1,12 @@
+.git
+.venv
+server/.venv
+web/node_modules
+web/dist
+.impeccable
+.tmp
+__pycache__
+*.pyc
+fn/
+app/
+build.py

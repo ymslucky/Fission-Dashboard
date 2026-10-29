@@ -1,0 +1,54 @@
+/* ============================================================
+   FISSION CONSOLE · 观测站 — design tokens
+   冷纸白观测站世界：诚实、精密、克制。禁用阴影/渐变/玻璃。
+   ============================================================ */
+:root {
+  /* paper & ink */
+  --paper: #f4f6f5;          /* 冷纸白地 */
+  --paper-raise: #fbfcfc;    /* 面板浮起一档 */
+  --paper-sink: #eef1f0;     /* 导航等下沉面 */
+  --ink: #1c2b33;            /* 墨青 */
+  --ink-soft: #3c4f58;
+
+  /* signal palette */
+  --obs: #2b6a7c;            /* 观测蓝：数据、选中、函数 */
+  --obs-soft: #e2ebec;       /* 观测蓝淡底 */
+  --obs-faint: #eaf1f2;
+  --alarm: #c0392b;          /* 朱砂红：仅异常/警示 */
+  --alarm-soft: #f9ecea;     /* 异常行淡朱底 */
+  --alarm-text: #f2c4bd;
+  --gray-teal: #7c8f96;      /* 灰青：次级信息 */
+
+  /* resource kind hues */
+  --kind-fn: #2b6a7c;        /* 函数 = 观测蓝 */
+  --kind-pkg: #1f6f54;       /* 包 = 草绿 */
+  --kind-env: #2e6e8e;       /* 环境 = 青 */
+  --kind-http: #3d4fa1;      /* HTTP 触发器 = 群青 */
+  --kind-timer: #7b4b94;     /* 定时触发器 = 绛紫 */
+  --kind-canary: #b97a1f;    /* 金丝雀 = 琥珀 */
+
+  /* status */
+  --ok: #1f6f54;
+  --warn: #b97a1f;
+  --warn-soft: #e8e3d5;
+  --warn-text: #8a7b3a;
+  --warn-line: #d8cf9e;
+
+  /* lines */
+  --hairline: #dfe5e3;
+  --hairline-strong: #dde4e3;
+  --row-line: #e8edec;
+
+  /* type */
+  --font-display: 'Archivo Narrow', 'Noto Sans SC', sans-serif;
+  --font-body: 'Noto Sans SC', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+
+  /* metrics */
+  --topbar-h: 56px;
+  --nav-w: 200px;
+  --list-w: 380px;
+  --row-h: 36px;
+
+  --focus-ring: 0 0 0 3px rgba(43, 106, 124, 0.55);
+}

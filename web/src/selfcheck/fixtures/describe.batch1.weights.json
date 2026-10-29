@@ -1,0 +1,37 @@
+{
+  "function": {
+    "apiVersion": "fission.io/v1",
+    "kind": "Function",
+    "metadata": {
+      "name": "hello",
+      "namespace": "ns1",
+      "annotations": { "fission.io/mcp-enabled": "false" }
+    },
+    "spec": {
+      "environment": { "name": "python", "namespace": "ns1" },
+      "package": { "packageref": { "name": "hello-pkg", "namespace": "ns1" } },
+      "InvokeStrategy": { "ExecutionStrategy": { "ExecutorType": "newdeploy" } }
+    }
+  },
+  "package": {
+    "name": "hello-pkg",
+    "buildStatus": "succeeded",
+    "buildlog": "",
+    "object": {
+      "apiVersion": "fission.io/v1",
+      "kind": "Package",
+      "metadata": { "name": "hello-pkg", "namespace": "ns1" },
+      "status": { "buildstatus": { "status": "succeeded" } }
+    }
+  },
+  "pods": { "warm": 2, "ready": 2 },
+  "executorType": "newdeploy",
+  "invocable": true,
+  "invocableNote": "Yes",
+  "triggers": [
+    { "kind": "httptriggers", "ns": "ns1", "name": "canary-route", "url": "/canary" },
+    { "kind": "timetriggers", "ns": "ns1", "name": "tick", "url": "" }
+  ],
+  "canary": [ { "name": "hello-canary", "stage": "progressing" } ],
+  "mcpToolExposed": { "enabled": false, "toolDescription": "", "inputSchema": {} }
+}

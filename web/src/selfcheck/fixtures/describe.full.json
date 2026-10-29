@@ -1,0 +1,61 @@
+{
+  "function": {
+    "apiVersion": "fission.io/v1",
+    "kind": "Function",
+    "metadata": {
+      "name": "hello",
+      "namespace": "default"
+    },
+    "spec": {
+      "environment": {
+        "name": "python",
+        "namespace": "default"
+      },
+      "package": {
+        "packageref": {
+          "name": "hello-pkg",
+          "namespace": "default"
+        }
+      }
+    }
+  },
+  "package": {
+    "name": "hello-pkg",
+    "buildStatus": "succeeded",
+    "buildlog": "Build succeeded for env python-…\n",
+    "object": {
+      "apiVersion": "fission.io/v1",
+      "kind": "Package",
+      "metadata": {
+        "name": "hello-pkg",
+        "namespace": "default"
+      }
+    }
+  },
+  "pods": {
+    "warm": 3,
+    "ready": 3
+  },
+  "executorType": "poolmgr",
+  "invocable": true,
+  "invocableNote": "Yes (cold start on first call)",
+  "triggers": [
+    {
+      "kind": "httptriggers",
+      "ns": "default",
+      "name": "hello-get",
+      "url": "/hello"
+    }
+  ],
+  "canary": [
+    {
+      "name": "hello-canary",
+      "stage": ""
+    }
+  ],
+  "mcpToolExposed": {
+    "enabled": true,
+    "toolDescription": "greets the caller",
+    "inputSchema": {}
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "function": {
+    "apiVersion": "fission.io/v1",
+    "kind": "Function",
+    "metadata": {
+      "name": "cold-fn",
+      "namespace": "demo"
+    },
+    "spec": {
+      "environment": {
+        "name": "python",
+        "namespace": "demo"
+      },
+      "package": {
+        "packageref": {
+          "name": "",
+          "namespace": "demo"
+        }
+      }
+    }
+  },
+  "package": null,
+  "pods": {
+    "warm": 0,
+    "ready": 0
+  },
+  "executorType": "poolmgr",
+  "invocable": true,
+  "invocableNote": "Yes (cold start on first call)",
+  "triggers": [],
+  "canary": [],
+  "mcpToolExposed": {
+    "enabled": false,
+    "toolDescription": "",
+    "inputSchema": {}
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "apiVersion": "fission.io/v1",
+      "kind": "CanaryConfig",
+      "metadata": {
+        "name": "hello-canary",
+        "namespace": "default"
+      },
+      "spec": {
+        "trigger": "hello-get",
+        "newfunction": "hello-v2",
+        "oldfunction": "hello-v1",
+        "weightincrement": 10,
+        "duration": 300,
+        "failurethreshold": 3,
+        "failureType": "failure"
+      },
+      "status": {
+        "status": "Running",
+        "failures": 0
+      }
+    }
+  ]
+}

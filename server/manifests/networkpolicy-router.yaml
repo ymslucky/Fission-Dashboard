@@ -1,0 +1,31 @@
+# Router 内部路由隔离：仅 Ingress Controller 与 Fission Console BFF 可达 Router
+# （阻断公网直接访问 /fission-function/... 内部路由）
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: router-internal-only
+  namespace: fission
+  labels:
+    app.kubernetes.io/managed-by: homelab-gitops
+spec:
+  # 实测标签（chart fission-all-1.27.0）：router Pod 带 application=fission-router
+  podSelector:
+    matchLabels:
+      application: fission-router
+  policyTypes: [Ingress]
+  ingress:
+  # 1) 入口控制器 → Router（外部触发流量，公共监听器）
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: platform-ingress
+    ports:
+    - { protocol: TCP, port: 8888 }
+  # 2) Console BFF → Router（调用测试：公共 + 内部监听器）
+  - from:
+    - podSelector:
+        matchLabels:
+          app: fission-console
+    ports:
+    - { protocol: TCP, port: 8888 }
+    - { protocol: TCP, port: 8889 }

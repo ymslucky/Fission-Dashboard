@@ -1,0 +1,13 @@
+{
+  "functions": [
+    {
+      "name": "hello",
+      "cpu_m": 120,
+      "mem_mi": 256
+    },
+    {
+      "name": "world"
+    }
+  ],
+  "ts": 0
+}
