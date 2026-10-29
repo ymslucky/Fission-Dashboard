@@ -7,6 +7,3 @@ web/dist
 .tmp
 __pycache__
 *.pyc
-fn/
-app/
-build.py
